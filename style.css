@@ -71,22 +71,16 @@ form {
   font-size: 16px;
 }
 
-/* Кнопки выбора ответа */
-.button-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
+/* === Кнопки выбора ответа === */
 .option-button {
-  flex: 1 1 calc(50% - 5px);
+  display: inline-block;
   padding: 12px 16px;
   background-color: #f0f0f0;
   border-radius: 8px;
-  text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
+  width: 100%;
 }
 
 .option-button input[type="radio"],
@@ -97,27 +91,43 @@ form {
   height: 100%;
   top: 0;
   left: 0;
+  margin: 0;
+  padding: 0;
   cursor: pointer;
-  z-index: 1;
 }
 
 .option-button span {
   position: relative;
-  z-index: 0;
-  display: block;
-  transition: all 0.3s ease;
+  z-index: 1;
 }
 
 .option-button:hover {
   background-color: #e0e0e0;
 }
 
+/* === ВСЯ КНОПКА ОКРАШИВАЕТСЯ ПРИ ВЫБОРЕ === */
+.option-button input[type="radio"]:checked,
+.option-button input[type="checkbox"]:checked {
+  z-index: 1;
+}
+
 .option-button input[type="radio"]:checked ~ span,
 .option-button input[type="checkbox"]:checked ~ span {
-  background-color: #007bff;
+  background-color: transparent; /* Убираем старое окрашивание текста */
   color: white;
+}
+
+.option-button input[type="radio"]:checked ~ .button-bg,
+.option-button input[type="checkbox"]:checked ~ .button-bg {
+  background-color: #007bff;
   border-radius: 8px;
-  padding: 4px 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  content: '';
 }
 
 /* Чекбоксы в виде кнопок */

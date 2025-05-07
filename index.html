@@ -23,30 +23,29 @@
 
       <!-- Вопрос: Сумма долга -->
       <div class="form-group">
-        <label class="label">
-          <input type="radio" name="debt_amount" value="До 250 000 рублей" required onchange="toggleAlternative(this)">
-          <div class="radio"></div>
-          <span>До 250 000 рублей</span>
-        </label>
-        <label class="label">
-          <input type="radio" name="debt_amount" value="От 250 000 до 500 000 рублей" onchange="toggleAlternative(this)">
-          <div class="radio"></div>
-          <span>От 250 000 до 500 000 рублей</span>
-        </label>
-        <label class="label">
-          <input type="radio" name="debt_amount" value="От 500 000 до 1 000 000 рублей" onchange="toggleAlternative(this)">
-          <div class="radio"></div>
-          <span>От 500 000 до 1 000 000 рублей</span>
-        </label>
-        <label class="label">
-          <input type="radio" name="debt_amount" value="От 1 000 000 рублей" onchange="toggleAlternative(this)">
-          <div class="radio"></div>
-          <span>От 1 000 000 рублей</span>
-        </label>
+        <div class="question-title">Ваша общая сумма долга перед всеми кредиторами?</div>
+        <div class="button-options">
+          <label class="option-button">
+            <input type="radio" name="debt_amount" value="До 250 000 рублей" required onchange="toggleAlternative(this)">
+            <span>До 250 000 рублей</span>
+          </label>
+          <label class="option-button">
+            <input type="radio" name="debt_amount" value="От 250 000 до 500 000 рублей" onchange="toggleAlternative(this)">
+            <span>От 250 000 до 500 000 рублей</span>
+          </label>
+          <label class="option-button">
+            <input type="radio" name="debt_amount" value="От 500 000 до 1 000 000 рублей" onchange="toggleAlternative(this)">
+            <span>От 500 000 до 1 000 000 рублей</span>
+          </label>
+          <label class="option-button">
+            <input type="radio" name="debt_amount" value="От 1 000 000 рублей" onchange="toggleAlternative(this)">
+            <span>От 1 000 000 рублей</span>
+          </label>
+        </div>
       </div>
 
       <!-- Сообщение при маленькой сумме долга -->
-      <div class="warning-message" id="warningMessage">
+      <div class="warning-message hidden" id="warningMessage">
         <strong>Ваша сумма долга менее 250 000 рублей, списать долги через банкротство невозможно.</strong><br>
         Но если вы хотите получить консультацию от юриста, оставьте ниже ваши контактные данные:
       </div>
@@ -55,113 +54,78 @@
       <div id="mainForm">
         <!-- Перед кем долг -->
         <div class="form-group">
-          <label class="checkbox-label">
-            <input type="checkbox" name="creditors[]" value="Кредитные организации (банки)">
-            <div class="checkbox">
-              <svg viewBox="0 0 18 18" version="1.1">
-                <g>
-                  <rect fill="none" x="0" y="0" width="18" height="18"></rect>
-                  <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
-                </g>
-              </svg>
-            </div>
-            <span>Кредитные организации (банки)</span>
-          </label>
-          <label class="checkbox-label">
-            <input type="checkbox" name="creditors[]" value="Микрофинансовые организации (МФО)">
-            <div class="checkbox">
-              <svg viewBox="0 0 18 18" version="1.1">
-                <g>
-                  <rect fill="none" x="0" y="0" width="18" height="18"></rect>
-                  <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
-                </g>
-              </svg>
-            </div>
-            <span>Микрофинансовые организации (МФО)</span>
-          </label>
-          <label class="checkbox-label">
-            <input type="checkbox" name="creditors[]" value="Коммунальные платежи (ЖКХ)">
-            <div class="checkbox">
-              <svg viewBox="0 0 18 18" version="1.1">
-                <g>
-                  <rect fill="none" x="0" y="0" width="18" height="18"></rect>
-                  <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
-                </g>
-              </svg>
-            </div>
-            <span>Коммунальные платежи (ЖКХ)</span>
-          </label>
-          <label class="checkbox-label">
-            <input type="checkbox" name="creditors[]" value="Налоги и штрафы">
-            <div class="checkbox">
-              <svg viewBox="0 0 18 18" version="1.1">
-                <g>
-                  <rect fill="none" x="0" y="0" width="18" height="18"></rect>
-                  <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
-                </g>
-              </svg>
-            </div>
-            <span>Налоги и штрафы</span>
-          </label>
-          <label class="checkbox-label">
-            <input type="checkbox" name="creditors[]" value="Иные задолженности">
-            <div class="checkbox">
-              <svg viewBox="0 0 18 18" version="1.1">
-                <g>
-                  <rect fill="none" x="0" y="0" width="18" height="18"></rect>
-                  <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
-                </g>
-              </svg>
-            </div>
-            <span>Иные задолженности</span>
-          </label>
+          <div class="question-title">Перед кем у вас долги?</div>
+          <div class="checkbox-options">
+            <label class="checkbox-option">
+              <input type="checkbox" name="creditors[]" value="Кредитные организации (банки)">
+              <span>Кредитные организации (банки)</span>
+            </label>
+            <label class="checkbox-option">
+              <input type="checkbox" name="creditors[]" value="Микрофинансовые организации (МФО)">
+              <span>Микрофинансовые организации (МФО)</span>
+            </label>
+            <label class="checkbox-option">
+              <input type="checkbox" name="creditors[]" value="Коммунальные платежи (ЖКХ)">
+              <span>Коммунальные платежи (ЖКХ)</span>
+            </label>
+            <label class="checkbox-option">
+              <input type="checkbox" name="creditors[]" value="Налоги и штрафы">
+              <span>Налоги и штрафы</span>
+            </label>
+            <label class="checkbox-option">
+              <input type="checkbox" name="creditors[]" value="Иные задолженности">
+              <span>Иные задолженности</span>
+            </label>
+          </div>
         </div>
 
         <!-- Просрочки -->
         <div class="form-group">
-          <label class="label">
-            <input type="radio" name="delays" value="Да">
-            <div class="radio"></div>
-            <span>Да</span>
-          </label>
-          <label class="label">
-            <input type="radio" name="delays" value="Нет">
-            <div class="radio"></div>
-            <span>Нет</span>
-          </label>
-          <label class="label">
-            <input type="radio" name="delays" value="Плачу вовремя">
-            <div class="radio"></div>
-            <span>Плачу вовремя</span>
-          </label>
+          <div class="question-title">Имеются ли у Вас просрочки по долгам и кредитам?</div>
+          <div class="button-options">
+            <label class="option-button">
+              <input type="radio" name="delays" value="Да">
+              <span>Да</span>
+            </label>
+            <label class="option-button">
+              <input type="radio" name="delays" value="Нет">
+              <span>Нет</span>
+            </label>
+            <label class="option-button">
+              <input type="radio" name="delays" value="Плачу вовремя">
+              <span>Плачу вовремя</span>
+            </label>
+          </div>
         </div>
 
         <!-- Ипотека -->
         <div class="form-group">
-          <label class="label">
-            <input type="radio" name="mortgage" value="Да">
-            <div class="radio"></div>
-            <span>Да</span>
-          </label>
-          <label class="label">
-            <input type="radio" name="mortgage" value="Нет">
-            <div class="radio"></div>
-            <span>Нет</span>
-          </label>
+          <div class="question-title">Имеется ли у Вас действующая ипотека?</div>
+          <div class="button-options">
+            <label class="option-button">
+              <input type="radio" name="mortgage" value="Да">
+              <span>Да</span>
+            </label>
+            <label class="option-button">
+              <input type="radio" name="mortgage" value="Нет">
+              <span>Нет</span>
+            </label>
+          </div>
         </div>
 
         <!-- Удержания с зарплаты -->
         <div class="form-group">
-          <label class="label">
-            <input type="radio" name="deductions" value="Да">
-            <div class="radio"></div>
-            <span>Да</span>
-          </label>
-          <label class="label">
-            <input type="radio" name="deductions" value="Нет">
-            <div class="radio"></div>
-            <span>Нет</span>
-          </label>
+          <div class="question-title">Начались ли удержания с заработной платы?</div>
+          <div class="button-options">
+            <label class="option-button">
+              <input type="radio" name="deductions" value="Да">
+              <span>Да</span>
+            </label>
+            <label class="option-button">
+              <input type="radio" name="deductions" value="Нет">
+              <span>Нет</span>
+            </label>
+          </div>
         </div>
 
         <!-- Имя -->
@@ -172,36 +136,19 @@
 
         <!-- Метод связи -->
         <div class="form-group">
+          <div class="question-title">Как вам удобнее получить результат?</div>
           <div class="items">
             <div class="item">
               <label class="label">
                 <input type="radio" name="contact_method" value="По телефону">
-                <div class="bgimage" style="background-image: url('https://i.1.creatium.io/disk2/65/07/95/74e8504aea97d54c59ae6fc92c0fae48da/92x92q8/zvonok.png');">
-                  <div class="tick">
-                    <svg viewBox="0 0 18 18" version="1.1">
-                      <g>
-                        <rect fill="none" x="0" y="0" width="18" height="18"></rect>
-                        <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
-                      </g>
-                    </svg>
-                  </div>
-                </div>
+                <div class="bgimage" style="background-image: url('https://i.1.creatium.io/disk2/65/07/95/74e8504aea97d54c59ae6fc92c0fae48da/92x92q8/zvonok.png');"></div>
                 <div class="subname">По телефону</div>
               </label>
             </div>
             <div class="item">
               <label class="label">
                 <input type="radio" name="contact_method" value="В WhatsApp">
-                <div class="bgimage" style="background-image: url('https://i.1.creatium.io/disk2/b8/03/25/4dad74e359795e023e9ec8bd898f44ddfb/92x92q8/whatsappz.png');">
-                  <div class="tick">
-                    <svg viewBox="0 0 18 18" version="1.1">
-                      <g>
-                        <rect fill="none" x="0" y="0" width="18" height="18"></rect>
-                        <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
-                      </g>
-                    </svg>
-                  </div>
-                </div>
+                <div class="bgimage" style="background-image: url('https://i.1.creatium.io/disk2/b8/03/25/4dad74e359795e023e9ec8bd898f44ddfb/92x92q8/whatsappz.png');"></div>
                 <div class="subname">В WhatsApp</div>
               </label>
             </div>
@@ -210,7 +157,7 @@
 
         <!-- Телефон -->
         <div class="form-group">
-          <label>Телефон, на который сообщить результат теста:</label>
+          <label>Телефон:</label>
           <input type="tel" name="phone" required>
         </div>
 
@@ -231,10 +178,23 @@
         <button type="submit">Получить консультацию</button>
       </div>
 
-      <!-- Подпись о конфиденциальности -->
+      <!-- Подпись -->
       <div class="form-footer">
         *Обещаем полную конфиденциальность. Ваши данные не попадут третьим лицам!
       </div>
+
+      <!-- Дополнительные кнопки -->
+      <div class="extra-buttons">
+        <a href="https://t.me/ivanov_au" target="_blank" class="extra-button telegram">
+          <img src="https://i.1.creatium.io/disk2/65/07/95/74e8504aea97d54c59ae6fc92c0fae48da/92x92q8/zvonok.png" alt="Telegram">
+          <span>Мой Telegram</span>
+        </a>
+        <a href="https://wa.me/79991234567" target="_blank" class="extra-button whatsapp">
+          <img src="https://i.1.creatium.io/disk2/b8/03/25/4dad74e359795e023e9ec8bd898f44ddfb/92x92q8/whatsappz.png" alt="WhatsApp">
+          <span>Мой WhatsApp</span>
+        </a>
+      </div>
+
     </form>
   </main>
 

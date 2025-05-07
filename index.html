@@ -9,6 +9,7 @@
 <body>
 
   <header>
+    <img src = "img/avatar.png">
     <h1>Арбитражный управляющий Иванов Иван Иванович</h1>
     <p>📞 Телефон: +7 (999) 123-45-67</p>
     <div class="social-buttons">
@@ -19,7 +20,8 @@
 
   <main>
     <form id="consultationForm" action="https://getform.io/f/aroydgqb" method="POST">
-      <!-- Вопрос 1 -->
+
+      <!-- Вопрос: Сумма долга -->
       <div class="form-group">
         <label class="label">
           <input type="radio" name="debt_amount" value="До 250 000 рублей" required onchange="toggleAlternative(this)">
@@ -43,9 +45,9 @@
         </label>
       </div>
 
-      <!-- Предупреждение -->
+      <!-- Сообщение при маленькой сумме долга -->
       <div class="warning-message" id="warningMessage">
-        <strong>При сумме всех долгов до 250 000 рублей списать долги через банкротство невозможно.</strong><br>
+        <strong>Ваша сумма долга менее 250 000 рублей, списать долги через банкротство невозможно.</strong><br>
         Но если вы хотите получить консультацию от юриста, оставьте ниже ваши контактные данные:
       </div>
 
@@ -55,27 +57,62 @@
         <div class="form-group">
           <label class="checkbox-label">
             <input type="checkbox" name="creditors[]" value="Кредитные организации (банки)">
-            <div class="checkbox"></div>
+            <div class="checkbox">
+              <svg viewBox="0 0 18 18" version="1.1">
+                <g>
+                  <rect fill="none" x="0" y="0" width="18" height="18"></rect>
+                  <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
+                </g>
+              </svg>
+            </div>
             <span>Кредитные организации (банки)</span>
           </label>
           <label class="checkbox-label">
             <input type="checkbox" name="creditors[]" value="Микрофинансовые организации (МФО)">
-            <div class="checkbox"></div>
+            <div class="checkbox">
+              <svg viewBox="0 0 18 18" version="1.1">
+                <g>
+                  <rect fill="none" x="0" y="0" width="18" height="18"></rect>
+                  <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
+                </g>
+              </svg>
+            </div>
             <span>Микрофинансовые организации (МФО)</span>
           </label>
           <label class="checkbox-label">
             <input type="checkbox" name="creditors[]" value="Коммунальные платежи (ЖКХ)">
-            <div class="checkbox"></div>
+            <div class="checkbox">
+              <svg viewBox="0 0 18 18" version="1.1">
+                <g>
+                  <rect fill="none" x="0" y="0" width="18" height="18"></rect>
+                  <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
+                </g>
+              </svg>
+            </div>
             <span>Коммунальные платежи (ЖКХ)</span>
           </label>
           <label class="checkbox-label">
             <input type="checkbox" name="creditors[]" value="Налоги и штрафы">
-            <div class="checkbox"></div>
+            <div class="checkbox">
+              <svg viewBox="0 0 18 18" version="1.1">
+                <g>
+                  <rect fill="none" x="0" y="0" width="18" height="18"></rect>
+                  <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
+                </g>
+              </svg>
+            </div>
             <span>Налоги и штрафы</span>
           </label>
           <label class="checkbox-label">
             <input type="checkbox" name="creditors[]" value="Иные задолженности">
-            <div class="checkbox"></div>
+            <div class="checkbox">
+              <svg viewBox="0 0 18 18" version="1.1">
+                <g>
+                  <rect fill="none" x="0" y="0" width="18" height="18"></rect>
+                  <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
+                </g>
+              </svg>
+            </div>
             <span>Иные задолженности</span>
           </label>
         </div>
@@ -113,16 +150,24 @@
           </label>
         </div>
 
+        <!-- Удержания с зарплаты -->
+        <div class="form-group">
+          <label class="label">
+            <input type="radio" name="deductions" value="Да">
+            <div class="radio"></div>
+            <span>Да</span>
+          </label>
+          <label class="label">
+            <input type="radio" name="deductions" value="Нет">
+            <div class="radio"></div>
+            <span>Нет</span>
+          </label>
+        </div>
+
         <!-- Имя -->
         <div class="form-group">
           <label>Ваше имя:</label>
           <input type="text" name="name" required>
-        </div>
-
-        <!-- Телефон -->
-        <div class="form-group">
-          <label>Телефон:</label>
-          <input type="tel" name="phone" required>
         </div>
 
         <!-- Метод связи -->
@@ -131,26 +176,50 @@
             <div class="item">
               <label class="label">
                 <input type="radio" name="contact_method" value="По телефону">
-                <div class="bgimage" style="background-image: url('https://i.1.creatium.io/disk2/65/07/95/74e8504aea97d54c59ae6fc92c0fae48da/92x92q8/zvonok.png');"></div>
+                <div class="bgimage" style="background-image: url('https://i.1.creatium.io/disk2/65/07/95/74e8504aea97d54c59ae6fc92c0fae48da/92x92q8/zvonok.png');">
+                  <div class="tick">
+                    <svg viewBox="0 0 18 18" version="1.1">
+                      <g>
+                        <rect fill="none" x="0" y="0" width="18" height="18"></rect>
+                        <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
                 <div class="subname">По телефону</div>
               </label>
             </div>
             <div class="item">
               <label class="label">
                 <input type="radio" name="contact_method" value="В WhatsApp">
-                <div class="bgimage" style="background-image: url('https://i.1.creatium.io/disk2/b8/03/25/4dad74e359795e023e9ec8bd898f44ddfb/92x92q8/whatsappz.png');"></div>
+                <div class="bgimage" style="background-image: url('https://i.1.creatium.io/disk2/b8/03/25/4dad74e359795e023e9ec8bd898f44ddfb/92x92q8/whatsappz.png');">
+                  <div class="tick">
+                    <svg viewBox="0 0 18 18" version="1.1">
+                      <g>
+                        <rect fill="none" x="0" y="0" width="18" height="18"></rect>
+                        <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
                 <div class="subname">В WhatsApp</div>
               </label>
             </div>
           </div>
         </div>
 
-        <!-- Кнопка -->
+        <!-- Телефон -->
+        <div class="form-group">
+          <label>Телефон, на который сообщить результат теста:</label>
+          <input type="tel" name="phone" required>
+        </div>
+
+        <!-- Кнопка основной формы -->
         <button type="submit">Узнать результат</button>
       </div>
 
       <!-- Альтернативная форма -->
-      <div id="altForm" class="hidden">
+      <div class="form-group hidden" id="altForm">
         <div class="form-group">
           <label>Ваше имя:</label>
           <input type="text" name="name_alt" required>
@@ -162,8 +231,9 @@
         <button type="submit">Получить консультацию</button>
       </div>
 
+      <!-- Подпись о конфиденциальности -->
       <div class="form-footer">
-        *Обещаем полную конфиденциальность. Ваши данные не попадут третьим лицам.
+        *Обещаем полную конфиденциальность. Ваши данные не попадут третьим лицам!
       </div>
     </form>
   </main>

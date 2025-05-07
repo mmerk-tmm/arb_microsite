@@ -14,6 +14,7 @@ function toggleAlternative(radio) {
   }
 }
 
+// Отправка формы
 document.getElementById("consultationForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
@@ -24,8 +25,8 @@ document.getElementById("consultationForm").addEventListener("submit", function(
     method: form.method,
     body: formData,
     headers: {
-      Accept: 'application/json',
-    },
+      Accept: 'application/json'
+    }
   })
   .then(() => {
     window.location.href = "thanks.html";
@@ -34,4 +35,4 @@ document.getElementById("consultationForm").addEventListener("submit", function(
     alert("Ошибка при отправке формы");
     console.error("Error:", error);
   });
-}); 
+});

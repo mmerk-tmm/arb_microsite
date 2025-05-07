@@ -98,19 +98,22 @@ form {
   top: 0;
   left: 0;
   cursor: pointer;
+  z-index: 1;
 }
 
 .option-button span {
   position: relative;
-  z-index: 1;
+  z-index: 0;
+  display: block;
+  transition: all 0.3s ease;
 }
 
 .option-button:hover {
   background-color: #e0e0e0;
 }
 
-.option-button input[type="radio"]:checked + span,
-.option-button input[type="checkbox"]:checked + span {
+.option-button input[type="radio"]:checked ~ span,
+.option-button input[type="checkbox"]:checked ~ span {
   background-color: #007bff;
   color: white;
   border-radius: 8px;
@@ -376,7 +379,7 @@ form button:hover {
 
 /* === ПРИ ВЫБОРЕ === */
 
-/* Радио-кнопки — полная заливка */
+/* Радио-кнопки — полная заливка всей кнопки */
 .option-button input[type="radio"]:checked ~ span {
   background-color: #007bff;
   color: white;
@@ -384,10 +387,21 @@ form button:hover {
   border-radius: 8px;
 }
 
-/* Чекбоксы — полная заливка */
+.option-button input[type="radio"]:checked {
+  z-index: 1;
+}
+
+.option-button input[type="radio"]:checked ~ span {
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+/* Чекбоксы — полная заливка всей кнопки */
 .checkbox-option input[type="checkbox"]:checked ~ span {
   background-color: #007bff;
   color: white;
-  padding: 4px 8px;
   border-radius: 8px;
+  padding: 4px 8px;
 }

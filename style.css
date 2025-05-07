@@ -132,10 +132,10 @@ form {
 }
 
 /* Полная заливка всей кнопки при выборе */
-.option-button input[type="radio"]:checked ~ span,
-.checkbox-option input[type="checkbox"]:checked ~ span {
-  color: rgb(30, 91, 170);
-  background-color: transparent;
+.option-button:has(input[type="radio"]:checked),
+.checkbox-option:has(input[type="checkbox"]:checked) {
+  /* color: rgb(30, 91, 170); */
+  background-color: rgb(57, 120, 255);
 }
 
 .option-button input[type="radio"]:checked::before,
@@ -243,6 +243,12 @@ form button:hover {
   padding: 0;
   cursor: pointer;
   z-index: 1;
+}
+
+.contact-methods {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 /* Иконка связи */

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Консультация от Арбитражного Управляющего</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Арбитражный управляющий Иванов Иван Иванович</h1>
+    <p>📞 Телефон: +7 (999) 123-45-67</p>
+    <div class="social-buttons">
+      <a href="https://t.me/ivanov_au" target="_blank">Telegram</a>
+      <a href="https://wa.me/79991234567" target="_blank">WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <form id="consultationForm" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+      <label>Укажите ваше имя:</label>
+      <input type="text" name="name" required />
+
+      <label>Ваш телефон или email:</label>
+      <input type="text" name="contact" required />
+
+      <label>Есть ли у вас задолженности перед банками?</label>
+      <select name="debts">
+        <option value="Да">Да</option>
+        <option value="Нет">Нет</option>
+      </select>
+
+      <label>Какова приблизительная сумма задолженности?</label>
+      <input type="text" name="debt_amount" />
+
+      <button type="submit">Получить консультацию</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

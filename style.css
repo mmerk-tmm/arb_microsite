@@ -134,8 +134,8 @@ form {
 /* Полная заливка всей кнопки при выборе */
 .option-button input[type="radio"]:checked ~ span,
 .checkbox-option input[type="checkbox"]:checked ~ span {
-  color: rgb(41, 93, 206);
-  background-color: transparent;
+  color: rgb(255, 255, 255);
+  background-color: rgb(15, 43, 121)
 }
 
 .option-button input[type="radio"]:checked::before,
@@ -208,4 +208,60 @@ form button:hover {
 
 .hidden {
   display: none !important;
+}
+/* === Стиль для кнопок связи (По телефону / В WhatsApp) === */
+.contact-method-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-method-label:hover {
+  border-color: #007bff;
+  background-color: #f0f8ff;
+}
+
+.contact-method-label .bgimage {
+  width: 64px;
+  height: 64px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  margin: 0 auto 10px;
+  transition: border-color 0.3s ease;
+}
+
+.contact-method-label .tick {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 123, 255, 0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-method-label input[type="radio"]:checked + .bgimage {
+  border-color: #007bff;
+}
+
+.contact-method-label input[type="radio"]:checked + .bgimage .tick {
+  opacity: 1;
+  color: white;
+}
+
+.contact-method-label .subname {
+  font-size: 14px;
+  text-align: center;
 }

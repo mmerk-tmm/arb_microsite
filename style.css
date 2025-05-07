@@ -135,7 +135,7 @@ form {
 .option-button input[type="radio"]:checked ~ span,
 .checkbox-option input[type="checkbox"]:checked ~ span {
   color: rgb(255, 255, 255);
-  background-color: rgb(15, 43, 121)
+  background-color: transparent;
 }
 
 .option-button input[type="radio"]:checked::before,

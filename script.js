@@ -1,7 +1,6 @@
 let currentStep = 0;
 const steps = document.querySelectorAll(".form-step");
 
-// Показываем нужный шаг
 function showStep(n) {
   steps.forEach((step, index) => {
     step.classList.toggle("hidden", index !== n);
@@ -9,7 +8,6 @@ function showStep(n) {
   });
 }
 
-// Переход к следующему шагу
 function nextStep() {
   const current = steps[currentStep];
   const requiredFields = current.querySelectorAll("[required]");
@@ -41,10 +39,19 @@ function nextStep() {
   showStep(currentStep);
 }
 
-// Назад
 function prevStep() {
   currentStep--;
   showStep(currentStep);
 }
+
+// Показывать поля в 2 столбца, если это радио- или чекбокс-группа
+document.querySelectorAll(".form-step").forEach(step => {
+  const radiosOrCheckboxes = step.querySelectorAll("div > input[type='radio'], div > input[type='checkbox']");
+  if (radiosOrCheckboxes.length > 2) {
+    step.style.display = "grid";
+    step.style.gridTemplateColumns = "repeat(2, 1fr)";
+    step.style.gap = "1rem";
+  }
+});
 
 showStep(currentStep);

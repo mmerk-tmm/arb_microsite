@@ -116,13 +116,40 @@
         <input type="tel" name="phone" required>
   
         <label>Как вам удобнее получить результат?</label>
-        <div>
-          <input type="radio" name="contact_method" value="По телефону">
-          <span>По телефону</span>
-        </div>
-        <div>
-          <input type="radio" name="contact_method" value="В WhatsApp">
-          <span>В WhatsApp</span>
+        <div class="items">
+          <div cr-field-item="" class="item" data-item-text="По телефону" data-item-value="1">
+            <label class="label">
+              <input type="radio" name="contact_method" value="По телефону">
+              <div class="bgimage" style="background-image: url('https://i.1.creatium.io/disk2/65/07/95/74e8504aea97d54c59ae6fc92c0fae48da/92x92q8/zvonok.png');">
+                <div class="tick">
+                  <svg viewBox="0 0 18 18" version="1.1">
+                    <g>
+                      <rect fill="none" x="0" y="0" width="18" height="18"></rect>
+                      <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div class="subname">По телефону</div>
+            </label>
+          </div>
+        
+          <div cr-field-item="" class="item" data-item-text="В WhatsApp" data-item-value="0">
+            <label class="label">
+              <input type="radio" name="contact_method" value="В WhatsApp">
+              <div class="bgimage" style="background-image: url('https://i.1.creatium.io/disk2/b8/03/25/4dad74e359795e023e9ec8bd898f44ddfb/92x92q8/whatsappz.png');">
+                <div class="tick">
+                  <svg viewBox="0 0 18 18" version="1.1">
+                    <g>
+                      <rect fill="none" x="0" y="0" width="18" height="18"></rect>
+                      <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div class="subname">В WhatsApp</div>
+            </label>
+          </div>
         </div>
   
         <button type="button" onclick="prevStep()">Назад</button>
@@ -131,6 +158,22 @@
           Ваши данные защищены и не будут переданы третьим лицам.
         </div>
       </div>
+      <!-- Шаг 6: Предупреждение при маленькой сумме долга -->
+<div class="form-step form-warning hidden">
+  <p><strong>Ваша сумма долга менее 250 000 рублей, списать долги через банкротство невозможно.</strong></p>
+  <p>Но если вы хотите получить консультацию от юриста, оставьте ниже ваши контактные данные:</p>
+
+  <label>Ваше имя:</label>
+  <input type="text" name="name_alt">
+
+  <label>Телефон:</label>
+  <input type="tel" name="phone_alt">
+
+  <button type="submit">Получить консультацию</button>
+  <div class="form-footer">
+    Ваши данные защищены и не будут переданы третьим лицам.
+  </div>
+</div>
     </form>
   </main>
 

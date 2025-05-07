@@ -332,3 +332,62 @@ form button:hover {
 .subname {
   font-size: 14px;
 }
+
+/* === КНОПКИ ВЫБОРА === */
+
+/* Базовый стиль кнопок */
+.option-button,
+.checkbox-option {
+  display: inline-block;
+  padding: 12px 16px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Скрываем радио- и чекбоксы */
+.option-button input[type="radio"],
+.checkbox-option input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Текст внутри кнопки */
+.option-button span,
+.checkbox-option span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Наведение */
+.option-button:hover,
+.checkbox-option:hover {
+  background-color: #e0e0e0;
+}
+
+/* === ПРИ ВЫБОРЕ === */
+
+/* Радио-кнопки — полная заливка */
+.option-button input[type="radio"]:checked ~ span {
+  background-color: #007bff;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+/* Чекбоксы — полная заливка */
+.checkbox-option input[type="checkbox"]:checked ~ span {
+  background-color: #007bff;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 8px;
+}

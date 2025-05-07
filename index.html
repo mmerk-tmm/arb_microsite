@@ -21,10 +21,10 @@
     <form id="consultationForm" action="https://getform.io/f/aroydgqb" method="POST">
       <label>Ваше имя:</label>
       <input type="text" name="name" required>
-  
+    
       <label>Телефон или Email:</label>
       <input type="text" name="contact" required>
-  
+    
       <label>Есть ли у вас задолженность перед банками?</label>
       <div>
         <input type="radio" name="debts" value="Да" checked>
@@ -32,14 +32,19 @@
         <input type="radio" name="debts" value="Нет">
         <span>Нет</span>
       </div>
-  
+    
       <label>Приблизительная сумма задолженности:</label>
       <input type="text" name="debt_amount">
-  
+    
       <!-- Защита от ботов -->
       <input type="hidden" name="_gotcha" style="display:none !important">
-  
+    
       <button type="submit">Получить консультацию</button>
+    
+      <!-- Подпись под кнопкой -->
+      <div class="form-footer">
+        Ваши данные защищены и не будут переданы третьим лицам.
+      </div>
     </form>
   </main>
 

@@ -18,22 +18,27 @@
   </header>
 
   <main>
-    <form id="consultationForm" action="mailto:your-email@example.com" method="post" enctype="text/plain">
-      <label>Укажите ваше имя:</label>
-      <input type="text" name="name" required />
-
-      <label>Ваш телефон или email:</label>
-      <input type="text" name="contact" required />
-
-      <label>Есть ли у вас задолженности перед банками?</label>
-      <select name="debts">
-        <option value="Да">Да</option>
-        <option value="Нет">Нет</option>
-      </select>
-
-      <label>Какова приблизительная сумма задолженности?</label>
-      <input type="text" name="debt_amount" />
-
+    <form id="consultationForm" action="https://getform.io/f/aroydgqb" method="POST">
+      <label>Ваше имя:</label>
+      <input type="text" name="name" required>
+  
+      <label>Телефон или Email:</label>
+      <input type="text" name="contact" required>
+  
+      <label>Есть ли у вас задолженность перед банками?</label>
+      <div>
+        <input type="radio" name="debts" value="Да" checked>
+        <span>Да</span>
+        <input type="radio" name="debts" value="Нет">
+        <span>Нет</span>
+      </div>
+  
+      <label>Приблизительная сумма задолженности:</label>
+      <input type="text" name="debt_amount">
+  
+      <!-- Защита от ботов -->
+      <input type="hidden" name="_gotcha" style="display:none !important">
+  
       <button type="submit">Получить консультацию</button>
     </form>
   </main>

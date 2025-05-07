@@ -134,7 +134,7 @@ form {
 /* Полная заливка всей кнопки при выборе */
 .option-button input[type="radio"]:checked ~ span,
 .checkbox-option input[type="checkbox"]:checked ~ span {
-  color: white;
+  color: rgb(41, 93, 206);
   background-color: transparent;
 }
 

@@ -4,11 +4,11 @@ function toggleAlternative(radio) {
   const altForm = document.getElementById("altForm");
 
   if (radio.value === "До 250 000 рублей") {
-    warning.style.display = "block";
+    warning.classList.remove("hidden");
     mainForm.style.display = "none";
     altForm.classList.remove("hidden");
   } else {
-    warning.style.display = "none";
+    warning.classList.add("hidden");
     mainForm.style.display = "block";
     altForm.classList.add("hidden");
   }
@@ -22,7 +22,7 @@ document.getElementById("consultationForm").addEventListener("submit", function(
   const formData = new FormData(form);
 
   fetch(form.action, {
-    method: form.method,
+    method: 'POST',
     body: formData,
     headers: {
       Accept: 'application/json'

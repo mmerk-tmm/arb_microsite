@@ -209,17 +209,21 @@ form button:hover {
 .hidden {
   display: none !important;
 }
-/* === Стиль для кнопок связи (По телефону / В WhatsApp) === */
+/* === Кнопки связи: по телефону / в WhatsApp === */
 .contact-method-label {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 10px;
   border: 2px solid #ddd;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: relative;
+  background-color: #fff;
+  width: 48%;
 }
 
 .contact-method-label:hover {
@@ -227,7 +231,22 @@ form button:hover {
   background-color: #f0f8ff;
 }
 
-.contact-method-label .bgimage {
+/* Скрываем радио-кнопку внутри */
+.contact-method-label input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Иконка связи */
+.bgimage {
   width: 64px;
   height: 64px;
   background-size: cover;
@@ -235,33 +254,11 @@ form button:hover {
   border-radius: 50%;
   border: 2px solid #ccc;
   margin: 0 auto 10px;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.contact-method-label .tick {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 123, 255, 0.7);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.contact-method-label input[type="radio"]:checked + .bgimage {
+/* Подсветка при выборе — только обводка и тень */
+.contact-method-label input[type="radio"]:checked ~ .bgimage {
   border-color: #007bff;
-}
-
-.contact-method-label input[type="radio"]:checked + .bgimage .tick {
-  opacity: 1;
-  color: white;
-}
-
-.contact-method-label .subname {
-  font-size: 14px;
-  text-align: center;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
 }

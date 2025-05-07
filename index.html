@@ -9,6 +9,7 @@
 <body>
 
   <header>
+    <img src = "img/">
     <h1>Арбитражный управляющий Иванов Иван Иванович</h1>
     <p>📞 Телефон: +7 (999) 123-45-67</p>
     <div class="social-buttons">
@@ -19,31 +20,116 @@
 
   <main>
     <form id="consultationForm" action="https://getform.io/f/aroydgqb" method="POST">
-      <label>Ваше имя:</label>
-      <input type="text" name="name" required>
-    
-      <label>Телефон или Email:</label>
-      <input type="text" name="contact" required>
-    
-      <label>Есть ли у вас задолженность перед банками?</label>
-      <div>
-        <input type="radio" name="debts" value="Да" checked>
-        <span>Да</span>
-        <input type="radio" name="debts" value="Нет">
-        <span>Нет</span>
+      <!-- Шаг 1: Сумма долга -->
+      <div class="form-step active">
+        <label>Ваша общая сумма долга перед всеми кредиторами?</label>
+        <div>
+          <input type="radio" name="debt_amount" value="До 250 000 рублей" required>
+          <span>До 250 000 рублей</span>
+        </div>
+        <div>
+          <input type="radio" name="debt_amount" value="От 250 000 до 500 000 рублей">
+          <span>От 250 000 до 500 000 рублей</span>
+        </div>
+        <div>
+          <input type="radio" name="debt_amount" value="От 500 000 до 1 000 000 рублей">
+          <span>От 500 000 до 1 000 000 рублей</span>
+        </div>
+        <div>
+          <input type="radio" name="debt_amount" value="От 1 000 000 рублей">
+          <span>От 1 000 000 рублей</span>
+        </div>
+  
+        <button type="button" onclick="nextStep()">Далее</button>
       </div>
-    
-      <label>Приблизительная сумма задолженности:</label>
-      <input type="text" name="debt_amount">
-    
-      <!-- Защита от ботов -->
-      <input type="hidden" name="_gotcha" style="display:none !important">
-    
-      <button type="submit">Получить консультацию</button>
-    
-      <!-- Подпись под кнопкой -->
-      <div class="form-footer">
-        Ваши данные защищены и не будут переданы третьим лицам.
+  
+      <!-- Шаг 2: Перед кем долг -->
+      <div class="form-step">
+        <label>Перед кем у вас долги?</label>
+        <div>
+          <input type="checkbox" name="creditors[]" value="Кредитные организации (банки)">
+          <span>Кредитные организации (банки)</span>
+        </div>
+        <div>
+          <input type="checkbox" name="creditors[]" value="Микрофинансовые организации (МФО)">
+          <span>Микрофинансовые организации (МФО)</span>
+        </div>
+        <div>
+          <input type="checkbox" name="creditors[]" value="Коммунальные платежи (ЖКХ)">
+          <span>Коммунальные платежи (ЖКХ)</span>
+        </div>
+        <div>
+          <input type="checkbox" name="creditors[]" value="Налоги и штрафы">
+          <span>Налоги и штрафы</span>
+        </div>
+        <div>
+          <input type="checkbox" name="creditors[]" value="Иные задолженности">
+          <span>Иные задолженности</span>
+        </div>
+  
+        <button type="button" onclick="prevStep()">Назад</button>
+        <button type="button" onclick="nextStep()">Далее</button>
+      </div>
+  
+      <!-- Шаг 3: Просрочки -->
+      <div class="form-step">
+        <label>Имеются ли у Вас просрочки по долгам и кредитам?</label>
+        <div>
+          <input type="radio" name="delays" value="Да">
+          <span>Да</span>
+        </div>
+        <div>
+          <input type="radio" name="delays" value="Нет">
+          <span>Нет</span>
+        </div>
+        <div>
+          <input type="radio" name="delays" value="Плачу вовремя">
+          <span>Плачу вовремя</span>
+        </div>
+  
+        <button type="button" onclick="prevStep()">Назад</button>
+        <button type="button" onclick="nextStep()">Далее</button>
+      </div>
+  
+      <!-- Шаг 4: Ипотека -->
+      <div class="form-step">
+        <label>Имеется ли у Вас действующая ипотека?</label>
+        <div>
+          <input type="radio" name="mortgage" value="Да">
+          <span>Да</span>
+        </div>
+        <div>
+          <input type="radio" name="mortgage" value="Нет">
+          <span>Нет</span>
+        </div>
+  
+        <button type="button" onclick="prevStep()">Назад</button>
+        <button type="button" onclick="nextStep()">Далее</button>
+      </div>
+  
+      <!-- Шаг 5: Контакты -->
+      <div class="form-step">
+        <label>Ваше имя:</label>
+        <input type="text" name="name" required>
+  
+        <label>Телефон:</label>
+        <input type="tel" name="phone" required>
+  
+        <label>Как вам удобнее получить результат?</label>
+        <div>
+          <input type="radio" name="contact_method" value="По телефону">
+          <span>По телефону</span>
+        </div>
+        <div>
+          <input type="radio" name="contact_method" value="В WhatsApp">
+          <span>В WhatsApp</span>
+        </div>
+  
+        <button type="button" onclick="prevStep()">Назад</button>
+        <button type="submit">Получить консультацию</button>
+        <div class="form-footer">
+          Ваши данные защищены и не будут переданы третьим лицам.
+        </div>
       </div>
     </form>
   </main>
